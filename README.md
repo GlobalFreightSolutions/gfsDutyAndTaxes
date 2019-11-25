@@ -26,3 +26,6 @@ To setup the shipping module, log into your admin panel and navigate to your con
 ![Admin Settings](docs/landed-cost-settings.png)
 
 For more information on the Duty and Taxes, you can find it at https://developer.gfsdeliver.com/info/documentation/gfs-checkout-duties-and-taxes-calculator/overview/.
+
+## License
+[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
