@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="JustShout_GfsLandedCost::css/gfs-landed-cost.css"/>
+    </head>
+    <body>
+        <referenceBlock name="gfs.head.widgets">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">JustShout_GfsLandedCost::html/head/widgets.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

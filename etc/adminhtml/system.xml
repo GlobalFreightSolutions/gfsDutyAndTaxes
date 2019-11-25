@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="carriers">
+            <group id="gfs" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="gfs_landed_information" sortOrder="1001" showInDefault="1" showInWebsite="1" showInStore="0" >
+                    <frontend_model>JustShout\GfsLandedCost\Block\Adminhtml\System\Config\Information</frontend_model>
+                    <attribute type="shared">1</attribute>
+                </field>
+                <field id="header_landed_costs" translate="label" sortOrder="1001" showInDefault="1" showInWebsite="1" showInStore="0" >
+                    <label>Duty and Taxes Calculator Options</label>
+                    <frontend_model>JustShout\Gfs\Block\Adminhtml\System\Config\Header</frontend_model>
+                    <attribute type="shared">1</attribute>
+                    <depends>
+                        <field id="carriers/gfs/active">1</field>
+                    </depends>
+                </field>
+                <field id="landed_cost_active" translate="label" type="select" sortOrder="1010" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Duty and Taxes Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="carriers/gfs/active">1</field>
+                        <field id="carriers/gfs/landed_cost_active">1</field>
+                    </depends>
+                </field>
+                <field id="landed_cost_environment" translate="label" type="select" sortOrder="1011" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Duty and Taxes Environment</label>
+                    <source_model>JustShout\GfsLandedCost\Model\Config\Source\Environment</source_model>
+                    <depends>
+                        <field id="carriers/gfs/active">1</field>
+                        <field id="carriers/gfs/landed_cost_active">1</field>
+                    </depends>
+                </field>
+                <field id="landed_cost_type" translate="label" type="select" sortOrder="1010" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Cost Type</label>
+                    <source_model>JustShout\GfsLandedCost\Model\Config\Source\LandedCostTypes</source_model>
+                    <depends>
+                        <field id="carriers/gfs/active">1</field>
+                        <field id="carriers/gfs/landed_cost_active">1</field>
+                    </depends>
+                </field>
+                <field id="landed_cost_total_show" translate="label comment" type="select" sortOrder="1020" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Total</label>
+                    <comment><![CDATA[This will show the total around the site.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="carriers/gfs/active">1</field>
+                        <field id="carriers/gfs/landed_cost_active">1</field>
+                    </depends>
+                </field>
+                <field id="landed_cost_total_label" translate="label comment" type="text" sortOrder="1030" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Total Label</label>
+                    <comment><![CDATA[This will be the label for the total in the checkout.]]></comment>
+                    <depends>
+                        <field id="carriers/gfs/active">1</field>
+                        <field id="carriers/gfs/landed_cost_active">1</field>
+                    </depends>
+                </field>
+                <field id="allowed_landed_countries" translate="label" type="multiselect" sortOrder="1040" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Duty and Taxes Cost Allowed Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <depends>
+                        <field id="carriers/gfs/active">1</field>
+                        <field id="carriers/gfs/landed_cost_active">1</field>
+                    </depends>
+                </field>
+                <field id="harmonised_attribute" translate="label" type="select" sortOrder="1050" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Harmonised Attribute</label>
+                    <comment><![CDATA[This attribute will be used for the harmonised code on the Duty and Taxes cost request.]]></comment>
+                    <source_model>JustShout\Gfs\Model\Config\Source\Attributes</source_model>
+                    <depends>
+                        <field id="carriers/gfs/active">1</field>
+                        <field id="carriers/gfs/landed_cost_active">1</field>
+                    </depends>
+                </field>
+                <field id="manufacturer_country_attribute" translate="label" type="select" sortOrder="1060" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Manufacturer Country Attribute</label>
+                    <comment><![CDATA[This attribute will be used for the item manufacturers country on the Duty and Taxes cost request.]]></comment>
+                    <source_model>JustShout\Gfs\Model\Config\Source\Attributes</source_model>
+                    <depends>
+                        <field id="carriers/gfs/active">1</field>
+                        <field id="carriers/gfs/landed_cost_active">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

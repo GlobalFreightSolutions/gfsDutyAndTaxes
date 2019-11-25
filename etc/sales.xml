@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Sales:etc/sales.xsd">
+    <section name="quote">
+        <group name="totals">
+            <item name="landed_fee" instance="JustShout\GfsLandedCost\Model\Total\Fee" sort_order="1500"/>
+        </group>
+    </section>
+    <section name="order_invoice">
+        <group name="totals">
+            <item name="landed_fee" instance="JustShout\GfsLandedCost\Model\Invoice\Total\Fee" sort_order="1500"/>
+        </group>
+    </section>
+    <section name="order_creditmemo">
+        <group name="totals">
+            <item name="landed_fee" instance="JustShout\GfsLandedCost\Model\Creditmemo\Total\Fee" sort_order="1500"/>
+        </group>
+    </section>
+</config>

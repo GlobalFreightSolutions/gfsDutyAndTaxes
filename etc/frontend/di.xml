@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="JustShout\Gfs\Block\Html\Head" type="JustShout\GfsLandedCost\Block\Html\Head"/>
+    <preference for="JustShout\Gfs\Controller\Data\Generate" type="JustShout\GfsLandedCost\Controller\Data\Generate"/>
+    <type name="Magento\Checkout\Block\Onepage">
+        <arguments>
+            <argument name="layoutProcessors" xsi:type="array">
+                <item name="gfsLandedProcessor" xsi:type="object">JustShout\GfsLandedCost\Block\Checkout\GfsLandedProcessor</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="checkout_landed_fee" xsi:type="object">JustShout\GfsLandedCost\Model\Checkout\ConfigProvider</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

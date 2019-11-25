@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="checkout_cart_add_product_complete">
+        <observer name="invalidate-duty-tax-cache" instance="JustShout\GfsLandedCost\Observer\InvalidateDutyFeeCache"/>
+    </event>
+    <event name="checkout_cart_update_items_before">
+        <observer name="invalidate-duty-tax-cache" instance="JustShout\GfsLandedCost\Observer\InvalidateDutyFeeCache"/>
+    </event>
+    <event name="sales_quote_remove_item">
+        <observer name="invalidate-duty-tax-cache" instance="JustShout\GfsLandedCost\Observer\InvalidateDutyFeeCache"/>
+    </event>
+</config>

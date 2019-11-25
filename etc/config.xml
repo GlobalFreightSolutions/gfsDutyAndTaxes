@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <gfs>
+                <landed_cost_active>1</landed_cost_active>
+                <landed_cost_total_label><![CDATA[Duty and Taxes Cost]]></landed_cost_total_label>
+            </gfs>
+        </carriers>
+    </default>
+</config>
